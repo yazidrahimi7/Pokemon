@@ -5,8 +5,8 @@ This is a Pokemon battle between Charizard and Pikachu!. An excercise where I le
 
 ### Screenshots
 
-![Screenshot 1](/images/1.png)
-![Screenshot 1](/images/2.png)
+![Screenshot 1](https://github.com/yazidrahimi7/Pokemon/blob/master/images/1.PNG)
+![Screenshot 1](https://github.com/yazidrahimi7/Pokemon/blob/master/images/2.PNG)
 
 ### Built with
 
