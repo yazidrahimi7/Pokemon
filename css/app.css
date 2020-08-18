@@ -1,0 +1,64 @@
+body {
+  text-align: center;
+  background-image: url("/images/background-battle.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  font-family: "Press Start 2P", cursive;
+}
+
+button {
+  font-size: 20px;
+  background-color: #ffffff;
+  padding: 12px 30px;
+  box-shadow: 0 1px 1px black;
+  margin: 10px;
+}
+
+.dock {
+  background-color: #d7d7d7;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.healthbar {
+  width: 80%;
+  height: 20px;
+  background-color: #eee;
+  margin: auto;
+  transition: width 500ms;
+}
+
+#attack:hover {
+  background-color: rgb(255, 63, 67);
+}
+
+#attack1:hover {
+  background-color: rgb(255, 63, 67);
+}
+
+#attack2:hover {
+  background-color: rgb(255, 63, 67);
+}
+
+#attack3:hover {
+  background-color: rgb(255, 63, 67);
+}
+
+.log .player-turn {
+  color: blue;
+  background-color: #e4e8ff;
+}
+
+.log .monster-turn {
+  color: red;
+  background-color: #ffc0c1;
+}
+
+.log ul {
+  list-style: none;
+}

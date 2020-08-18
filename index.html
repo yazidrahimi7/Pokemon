@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://npmcdn.com/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="css/foundation.min.css" />
+    <link rel="stylesheet" href="css/app.css" />
+
+    <!-- font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokemon Games</title>
+  </head>
+  <body>
+    <audio src="/song.mp3" autoplay>
+      <p>
+        If you are reading this, it is because your browser does not support the
+        audio element.
+      </p>
+      <embed src="/song.mp3" width="180" height="90" hidden="true" />
+    </audio>
+    <div id="app">
+      <section v-if="!gameIsRunning">
+        <img src="/images/logo.png" width="550px" style="margin-top: 150px;" />
+        <h1>Charizard vs Pikachu</h1>
+        <button id="startGame" @click="startGame" style="margin: 50px;">
+          Start
+        </button>
+      </section>
+
+      <section v-else>
+        <img
+          src="/images/logo.png"
+          width="250px"
+          style="margin-top: 20px;"
+        /><br />
+        <div class="small-6 columns">
+          <img src="/images/charizard.png" width="172px" />
+          <div class="dock">
+            <div class="playerHealth">
+              <h2>Charizard</h2>
+              <div
+                class="healthbar text-center"
+                style="
+                  background-color: rgb(65, 191, 207);
+                  margin: 0;
+                  color: white;
+                "
+                :style="{width: playerHealth + '%'}"
+              >
+                <!-- {{ playerHealth }} -->
+              </div>
+              <h3 style="text-align: right;">
+                {{playerHealth}} <span>/ 100</span>
+              </h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="small-6 columns">
+          <img src="/images/pikachu.png" width="203px" />
+          <div class="dock">
+            <div class="monsterHealth">
+              <h2>Pikachu</h2>
+              <div
+                class="healthbar text-center"
+                style="
+                  background-color: rgb(65, 191, 207);
+                  margin: 0;
+                  color: white;
+                "
+                :style="{width: monsterHealth + '%'}"
+              >
+                <!-- {{ monsterHealth }} -->
+              </div>
+
+              <h3 style="text-align: right;">
+                {{monsterHealth}} <span>/ 100</span>
+              </h3>
+            </div>
+          </div>
+        </div>
+
+        <section>
+          <div class="small-12 columns">
+            <button id="attack" @click="attack">Ember</button>
+            <button id="attack1" @click="attack1">
+              Flamethrower
+            </button>
+            <button id="attack2" @click="attack2">Burning Tail</button>
+            <button id="attack3" @click="attack3">Fire Spin</button>
+          </div>
+        </section>
+
+        <section class="row log" v-if="turns.length > 0">
+          <div class="small-12 columns">
+            <ul>
+              <li
+                v-for="turn in turns"
+                :class="{'player-turn': turn.isPlayer, 'monster-turn': !turn.isPlayer}"
+              >
+                {{ turn.text }}
+              </li>
+            </ul>
+          </div>
+        </section>
+      </section>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
